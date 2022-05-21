@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: zmkfirmware/zmk-build-arm:2.5
+      image: zmkfirmware/zmk-build-arm:3.0
     name: Build
     steps:
       - name: Checkout
@@ -38,15 +38,15 @@ jobs:
       - name: Eternal Keypad DTS File
         if: ${{ always() }}
         run: cat -n build/zephyr/nice_nano_v2.dts.pre.tmp
-      - name: Eternal Keypad Left Kconfig file
+      - name: Eternal Keypad Lefty Kconfig file
         run: cat build/zephyr/.config | grep -v "^#" | grep -v "^$"
       - name: Rename zmk.uf2
-        run: cp build/zephyr/zmk.uf2 eternal_keypad_left_nice_nano_v2.uf2
-      - name: Archive (Eternal Keypad Left)
+        run: cp build/zephyr/zmk.uf2 eternal_keypad_lefty_nice_nano_v2.uf2
+      - name: Archive (Eternal Keypad Lefty)
         uses: actions/upload-artifact@v2
         with:
           name: firmware
-          path: eternal_keypad_left_nice_nano_v2.uf2
+          path: eternal_keypad_lefty_nice_nano_v2.uf2
       - name: West Build (Eternal Keypad)
         run: west build --pristine -s zmk/app -b nice_nano_v2 -- -DSHIELD=eternal_keypad -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
 
