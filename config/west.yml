@@ -7,7 +7,7 @@ manifest:
   projects:
     - name: zmk
       remote: halcyoncorsair
-      revision: eternal-keypad-rgb
+      revision: eternal_keypad_rgb
       import: app/west.yml
   self:
     path: config
