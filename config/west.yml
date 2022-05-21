@@ -3,7 +3,7 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: halcyoncorsair
-      url-base: https://github.com/halcyonCorsair/zmk
+      url-base: https://github.com/halcyonCorsair
   projects:
     - name: zmk
       remote: halcyoncorsair
