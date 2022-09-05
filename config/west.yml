@@ -2,11 +2,9 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: halcyoncorsair
-      url-base: https://github.com/halcyonCorsair
   projects:
     - name: zmk
-      remote: halcyoncorsair
+      remote: zmkfirmware
       revision: eternal_keypad_rgb
       import: app/west.yml
   self:
